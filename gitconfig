@@ -1,0 +1,32 @@
+[user]
+	name = Hugo Marcotte
+	email = marcotte.hugo@gmail.com
+[core]
+	excludesfile = /Users/hugo/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple
+[rerere]
+	enabled = true
+[rebase]
+	autosquash = true
+[alias]
+	unstage = reset HEAD --
+	uncommit = reset --soft HEAD^
+	df = diff --word-diff --color-words
+	sla = log --oneline --decorate --graph --all -20
+	dev = !git checkout develop && git pull --rebase && git checkout -
+	browse = !hub browse
+	compare = !hub compare
+	tracked = ls-tree -r master --name-only
+[pull]
+	rebase = true
+[merge]
+	ff = only
+[fetch]
+	prune = true
