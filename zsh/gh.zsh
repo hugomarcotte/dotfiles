@@ -45,3 +45,5 @@ export PATH=$PATH:/Users/hugo/src/greenhouse/bin
 # AWS
 source /usr/local/share/zsh/site-functions/_aws
 export AWS_BUCKET=""
+
+export SHED_DISABLE_OTP=1
