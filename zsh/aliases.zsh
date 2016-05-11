@@ -10,6 +10,7 @@ alias grb='git rebase -i'
 alias gtr='git ls-tree -r master --name-only'
 alias glgrep='git log -E -i --grep'
 alias gstash='git stash -u'
+alias gpf='git push --force-with-lease'
 
 alias heroku_psql='heroku pg:psql'
 
