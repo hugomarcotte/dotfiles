@@ -94,3 +94,6 @@ source ~/.zsh/aliases.zsh
 
 # Greenhouse
 source ~/.zsh/gh.zsh
+
+# TMUXINATOR
+source ~/.bin/tmuxinator.zsh

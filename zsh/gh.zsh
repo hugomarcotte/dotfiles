@@ -12,6 +12,8 @@ alias uatc="heroku run rails console --app uat-greenhouse"
 
 alias testdb="RAILS_ENV=test bundle exec rake -t db:test:load db:seed"
 alias local_migrate="rake db:local:migrate && testdb"
+#git
+alias gmasta='!git checkout master && git pull --rebase && git checkout -'
 
 # DAJOKU
 eval "$(docker-machine env default)"
@@ -45,5 +47,10 @@ export PATH=$PATH:/Users/hugo/src/greenhouse/bin
 # AWS
 source /usr/local/share/zsh/site-functions/_aws
 export AWS_BUCKET=""
+alias awsprod='eval "$(/Users/hugo/src/switch_aws_acct/switch_aws_acct prod)"'
+alias awsdev='eval "$(/Users/hugo/src/switch_aws_acct/switch_aws_acct dev)"'
 
 export SHED_DISABLE_OTP=1
+
+# SOLR
+export SOLR_URL=http://localhost:8983/solr/development
