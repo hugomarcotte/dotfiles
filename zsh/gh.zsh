@@ -1,24 +1,27 @@
-alias greenhouse='cd ~/src/greenhouse'
 alias start_nginx="sudo nginx -c /Users/hugo/src/greenhouse/config/development_nginx.conf"
 alias stop_nginx="sudo nginx -c /Users/hugo/src/greenhouse/config/development_nginx.conf -s stop"
 alias reload_nginx="sudo nginx -c /Users/hugo/src/greenhouse/config/development_nginx.conf -s reload"
 
-alias devlog="heroku logs --tail -n10000 --app dev-greenhouse"
-alias uatlog="heroku logs --tail -n10000 --app uat-greenhouse"
-alias testlog='tail -f log/test.log'
-
-alias devc="heroku run rails console --app dev-greenhouse"
-alias uatc="heroku run rails console --app uat-greenhouse"
-
 alias testdb="RAILS_ENV=test bundle exec rake -t db:test:load db:seed"
 alias local_migrate="rake db:local:migrate && testdb"
 #git
-alias gmasta='!git checkout master && git pull --rebase && git checkout -'
+alias gmasta='git checkout master && git pull --rebase && git checkout -'
 
 # DAJOKU
-eval "$(docker-machine env default)"
-export DOCKER_IP=$(docker-machine ip default)
+# eval "$(docker-machine env default)"
+# export DOCKER_IP=$(docker-machine ip default)
 alias create_docker_machine='docker-machine create -d virtualbox --virtualbox-memory 4096 default'
+
+alias start_solr='docker run \
+  -it --rm \
+  --name solr \
+  -p 0.0.0.0:8983:8983 \
+  -v /Users/hugo/src/gh_solr_data/solr:/var/data/solr \
+  registry.int.greenhouse.io/solr:6-ghr-development \
+  -Dlog4j.debug=true \
+  -Dsolr.autoCommit.maxTime=300000 \
+  -Dsolr.autoSoftCommit.maxTime=1000 \
+  -m 512m'
 
 # More time for debugging
 export RACK_TIMEOUT=120
@@ -46,11 +49,12 @@ export PATH=$PATH:/Users/hugo/src/greenhouse/bin
 
 # AWS
 source /usr/local/share/zsh/site-functions/_aws
-export AWS_BUCKET=""
 alias awsprod='eval "$(/Users/hugo/src/switch_aws_acct/switch_aws_acct prod)"'
 alias awsdev='eval "$(/Users/hugo/src/switch_aws_acct/switch_aws_acct dev)"'
 
 export SHED_DISABLE_OTP=1
 
+export WEB_CONCURRENCY=1
+
 # SOLR
-export SOLR_URL=http://localhost:8983/solr/development
+# export SOLR_URL=http://localhost:8983/solr/development

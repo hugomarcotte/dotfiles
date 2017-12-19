@@ -97,3 +97,4 @@ source ~/.zsh/gh.zsh
 
 # TMUXINATOR
 source ~/.bin/tmuxinator.zsh
+export PATH="$HOME/.yarn/bin:$PATH"
