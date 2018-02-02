@@ -20,10 +20,10 @@
 	uncommit = reset --soft HEAD^
 	df = diff --word-diff --color-words
 	sla = log --oneline --decorate --graph --all -20
-	dev = !git checkout develop && git pull --rebase && git checkout -
 	browse = !hub browse
 	compare = !hub compare
 	tracked = ls-tree -r master --name-only
+	cleanmergedbranch = !git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
 [pull]
 	rebase = true
 [merge]

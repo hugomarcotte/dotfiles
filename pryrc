@@ -26,4 +26,4 @@ if defined? Rails
   end
 end
 
-eval(File.open(".irbrc").read)
+eval(File.open("#{ENV['HOME']}/.irbrc").read)

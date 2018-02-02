@@ -4,8 +4,8 @@ alias reload_nginx="sudo nginx -c /Users/hugo/src/greenhouse/config/development_
 
 alias testdb="RAILS_ENV=test bundle exec rake -t db:test:load db:seed"
 alias local_migrate="rake db:local:migrate && testdb"
-#git
-alias gmasta='git checkout master && git pull --rebase && git checkout -'
+
+alias rubo='git status --porcelain | grep -v ^D | cut -c4- | xargs rubocop'
 
 # DAJOKU
 # eval "$(docker-machine env default)"
@@ -22,6 +22,8 @@ alias start_solr='docker run \
   -Dsolr.autoCommit.maxTime=300000 \
   -Dsolr.autoSoftCommit.maxTime=1000 \
   -m 512m'
+
+alias start_webpack=‘webpack-dev-server’
 
 # More time for debugging
 export RACK_TIMEOUT=120
