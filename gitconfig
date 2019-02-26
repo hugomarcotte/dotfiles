@@ -24,9 +24,13 @@
 	compare = !hub compare
 	tracked = ls-tree -r master --name-only
 	cleanmergedbranch = !git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
+	# brew install fzf
+	cob = !git checkout `(git branch | fzf)`
 [pull]
 	rebase = true
 [merge]
 	ff = only
 [fetch]
 	prune = true
+[help]
+	autocorrect = 1

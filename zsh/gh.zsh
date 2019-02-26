@@ -15,20 +15,22 @@ alias create_docker_machine='docker-machine create -d virtualbox --virtualbox-me
 alias start_solr='docker run \
   -it --rm \
   --name solr \
-  -p 0.0.0.0:8983:8983 \
   -v /Users/hugo/src/gh_solr_data/solr:/var/data/solr \
-  registry.int.greenhouse.io/solr:6-ghr-development \
-  -Dlog4j.debug=true \
+  -e "CORES=development test" \
+  -p 0.0.0.0:8983:8983 \
+  registry.int.greenhouse.io/solr:6-ghr \
+  -Dghr.solr.logging.request=DEBUG \
   -Dsolr.autoCommit.maxTime=300000 \
-  -Dsolr.autoSoftCommit.maxTime=1000 \
+  -Dsolr.autoSoftCommit.maxTime=2000 \
   -m 512m'
 
-alias start_webpack=‘webpack-dev-server’
+alias webpack="yarn run webpack-dev-server"
 
 # More time for debugging
 export RACK_TIMEOUT=120
 export UNICORN_TIMEOUT=120
 export UNICORN_WORKERS=1
+export WEB_TIMEOUT=500
 
 # Travis
 travis_screenshot() { aws s3 sync s3://test-heroku/artifacts/$1 .; }
@@ -60,3 +62,10 @@ export WEB_CONCURRENCY=1
 
 # SOLR
 # export SOLR_URL=http://localhost:8983/solr/development
+
+function rails_4_solano {
+  chmod 755 ~/src/onboarding/script/solano/trigger_solano_build.sh;
+  BUILD_PROFILE=rails_4 ~/src/onboarding/script/solano/trigger_solano_build.sh;
+}
+
+export PATH=$PATH:~/.dajoku-cli/bin

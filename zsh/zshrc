@@ -83,11 +83,15 @@ source ~/.localrc
 #RBENV
 eval "$(rbenv init -)"
 
+#NODENV
+eval "$(nodenv init -)"
+
 #PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:$EC2_HOME/bin
 export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:/Users/hugo/seleniumDriver"
+export PATH=$PATH:$HOME/.bin
 
 # Aliases
 source ~/.zsh/aliases.zsh
@@ -98,3 +102,11 @@ source ~/.zsh/gh.zsh
 # TMUXINATOR
 source ~/.bin/tmuxinator.zsh
 export PATH="$HOME/.yarn/bin:$PATH"
+export EDITOR='vim'
+
+# Direnv
+eval "$(direnv hook zsh)"
+
+function bs() {
+  rg "$1" $(bundle show --paths)
+}
