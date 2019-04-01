@@ -14,3 +14,4 @@ alias rake="bundle exec rake"
 # misc
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias redconsole="echo -e '\033]6;1;bg;red;brightness;270\a'"
+alias path='echo $PATH | tr -s ":" "\n"'
