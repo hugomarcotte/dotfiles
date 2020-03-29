@@ -15,3 +15,5 @@ alias rake="bundle exec rake"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias redconsole="echo -e '\033]6;1;bg;red;brightness;270\a'"
 alias path='echo $PATH | tr -s ":" "\n"'
+
+alias mvim="/Applications/MacVim.app/Contents/bin/mvim $1"

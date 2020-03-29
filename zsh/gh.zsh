@@ -25,6 +25,7 @@ alias start_solr='docker run \
   -m 512m'
 
 alias webpack="yarn run webpack-dev-server"
+alias trace-agent="./trace-agent-6.10.0-darwin-amd64 -config /opt/datadog-agent/etc/datadog.yaml"
 
 # More time for debugging
 export RACK_TIMEOUT=120
@@ -32,21 +33,12 @@ export UNICORN_TIMEOUT=120
 export UNICORN_WORKERS=1
 export WEB_TIMEOUT=500
 
-# Travis
-travis_screenshot() { aws s3 sync s3://test-heroku/artifacts/$1 .; }
-# added by travis gem
-[ -f /Users/hugo/.travis/travis.sh ] && source /Users/hugo/.travis/travis.sh
-
 # ZEUS
 ze () { ARGS=$@; zeus $@; ZE_EC=$?; stty sane; if [ $ZE_EC = 2 ]; then ze $ARGS; fi }
 
 export PGHOST=localhost
 export JAVA_HOME=$(/usr/libexec/java_home)
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.3.2
-
-# SAUCE LAB
-export SAUCE_CONNECT_EXEC=/Users/hugo/saucelabs/sc-4.3.9-osx/bin/sc
-# export RUN_ON_SAUCE=false
 
 export PATH="$PATH:/Users/hugo/src/gh-cli"
 export PATH=$PATH:/Users/hugo/src/greenhouse/bin
@@ -69,3 +61,15 @@ function rails_4_solano {
 }
 
 export PATH=$PATH:~/.dajoku-cli/bin
+
+alias solano='docker run -it --rm -v ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub -v $PWD:/src gcr.io/gh-infra/solano-cli'
+
+# AWS vault
+aws-vault-use() {
+  unset AWS_VAULT
+  eval $(aws-vault exec --assume-role-ttl=1h --session-ttl=12h "$@" -- env \
+    | awk '/^AWS/ { print "export " $1 }')
+}
+alias aws_support='aws-vault-use support'
+
+export AWS_DEFAULT_REGION=us-east-1
