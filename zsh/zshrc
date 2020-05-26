@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/hugo/.oh-my-zsh
+export ZSH=/Users/hugo.marcotte/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="hugomarcotte"
+# ZSH_THEME="hugomarcotte"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,6 +48,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=()
 
+ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,31 +105,18 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# LOCAL
-source ~/.localrc
-
 #RBENV
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #NODENV
 eval "$(nodenv init -)"
 
-#PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH=$PATH:$EC2_HOME/bin
-export PATH="$PATH:/usr/local/heroku/bin"
-export PATH="$PATH:/Users/hugo/seleniumDriver"
-export PATH=$PATH:$HOME/.bin
-
-# Aliases
+# Source
+source ~/.localrc
 source ~/.zsh/aliases.zsh
-
-# Greenhouse
 source ~/.zsh/gh.zsh
-
-# TMUXINATOR
-source ~/.bin/tmuxinator.zsh
-export PATH="$HOME/.yarn/bin:$PATH"
 
 # Direnv
 eval "$(direnv hook zsh)"
