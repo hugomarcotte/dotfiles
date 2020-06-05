@@ -2,7 +2,7 @@
 	name = Hugo Marcotte
 	email = marcotte.hugo@gmail.com
 [core]
-	excludesfile = /Users/hugo/.gitignore_global
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [rerere]
@@ -56,7 +56,7 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [init]
-	templateDir = /Users/hugo/.git-templates
+	templateDir = /Users/hugo.marcotte/.git-templates
 [secrets]
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
@@ -81,7 +81,7 @@
 	patterns = https://hooks.slack.com/services/T[a-z0-9_]{8}/B[a-z0-9_]{8}/[a-z0-9_]{24}
 	patterns = \"type\"\\s*:\\s*\"service_account\"
 	patterns = SK[a-z0-9]{32}
-	patterns = [a-f0-9]{24}[-][0-9]{1,2}
+	patterns = [a-f0-9]{32}[-][0-9]{1,2}
 	patterns = A[K|S]IA[0-9A-Z]{16}
 	patterns = amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 	patterns = AIza[0-9a-z\\-_]{35}

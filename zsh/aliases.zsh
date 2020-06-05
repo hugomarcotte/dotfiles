@@ -11,6 +11,7 @@ alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %
 alias rspec="RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rspec"
 alias rake="RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rake"
 alias rails="RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rails"
+alias zeus="DISABLE_BOOTSNAP=true RUBYOPT=-W0 zeus"
 
 # misc
 alias redconsole="echo -e '\033]6;1;bg;red;brightness;270\a'"
