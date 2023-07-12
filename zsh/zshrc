@@ -27,7 +27,7 @@ export ZSH=/Users/hugo.marcotte/.oh-my-zsh
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -108,6 +108,10 @@ export EDITOR='vim'
 #RBENV
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+export CFLAGS="-Wno-error=implicit-function-declaration"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --with-zlib-dir=$(brew --prefix zlib)"
+
 eval "$(rbenv init -)"
 
 #NODENV
@@ -122,4 +126,8 @@ source ~/.zsh/gh.zsh
 eval "$(direnv hook zsh)"
 
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin/:$PATH"
+
+
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+autoload -U compinit; compinit

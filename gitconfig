@@ -2,7 +2,7 @@
 	name = Hugo Marcotte
 	email = marcotte.hugo@gmail.com
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/hugo.marcotte/.gitignore
 [push]
 	default = simple
 [rerere]
@@ -57,6 +57,7 @@
 	insteadOf = https://github.com/
 [init]
 	templateDir = /Users/hugo.marcotte/.git-templates
+	defaultBranch = main
 [secrets]
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
@@ -98,5 +99,12 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
