@@ -10,7 +10,7 @@ alias gclean="git branch -a --merged | grep -ve master -e main -e remotes | xarg
 
 # Rails
 alias rake="bundle exec rake"
-alias rails=" WEB_CONCURRENCY=1 WEB_TIMEOUT=5000 rails"
+alias rails=" WEB_CONCURRENCY=1 WEB_TIMEOUT=5000 bundle exec rails"
 alias zeus="DISABLE_BOOTSNAP=true RUBYOPT=-W0 zeus"
 
 # misc
