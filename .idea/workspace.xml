@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="83692b34-b903-4548-892a-795dc4ce8ca8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitconfig" beforeDir="false" afterPath="$PROJECT_DIR$/gitconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zsh/aliases.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/zsh/aliases.zsh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zsh/gh.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/zsh/gh.zsh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zsh/zshrc" beforeDir="false" afterPath="$PROJECT_DIR$/zsh/zshrc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,24 +17,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="1cH77TAXzbN0dulITxUdDXEfw8G" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/hugo.marcotte/src/dotfiles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ruby.rails.projectView.checked": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
@@ -56,16 +62,12 @@
       <workItem from="1604590372191" duration="827000" />
       <workItem from="1604625407491" duration="652000" />
       <workItem from="1623952802206" duration="252000" />
+      <workItem from="1694442283675" duration="71000" />
+      <workItem from="1694445146883" duration="504000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1573" y="259" width="586" height="490" key="find.popup" timestamp="1604625453174">
-      <screen x="-2560" y="-204" width="2560" height="1417" />
-    </state>
-    <state x="-1573" y="259" width="586" height="490" key="find.popup/-2560.-204.2560.1417/0.23.1792.1097@-2560.-204.2560.1417" timestamp="1604625453174" />
   </component>
 </project>

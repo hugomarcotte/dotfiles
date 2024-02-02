@@ -35,3 +35,8 @@ export PATH="$PATH:$HOME/.dajoku-cli/bin"
 export PGHOST=localhost
 export PGUSER=postgres
 export PGPASSWORD=postgres
+
+# More time for debugging
+export RACK_TIMEOUT=120
+export UNICORN_TIMEOUT=120
+export UNICORN_WORKERS=1
